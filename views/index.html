@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="https://app.fastbots.ai/embed.js" data-bot-id="cm2ljb8cm1kmbn8bnyp18a6fp"></script>
+    <style>
+        /* Basic styles for main website */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #9f078d;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #c742ce;
+            color: white;
+            padding: 1rem;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+        }
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero-section {
+            background-image: url('https://image.slidesdocs.com/responsive-images/background/cute-animal-colorful-nature-animal-decoration-cartoon-animals-powerpoint-background_0e8dfc2564__960_540.jpg');
+            background-size: cover;
+            text-align: center;
+            padding: 100px 20px;
+            color: rgb(8, 0, 0);
+        }
+        .shop-section {
+            background-image: url('https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsb2ZmaWNlMl9wYWludGluZ19vZl9wYXdfcHJpbnRzX3BhdHRlcm5faW5fdGhlX3N0eWxlX29mX181ZTEwOWQ5OC1hNzEyLTRhZjktYjYwMy1kOWUyOWFlMTQxMDRfMS5qcGc.jpg'); /* Change to your actual path */
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            text-align: center;
+            color: rgb(10, 0, 0);
+        }
+        .breeds-section {
+            background-image: url('https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsb2ZmaWNlMl9wYWludGluZ19vZl9wYXdfcHJpbnRzX3BhdHRlcm5faW5fdGhlX3N0eWxlX29mX181ZTEwOWQ5OC1hNzEyLTRhZjktYjYwMy1kOWUyOWFlMTQxMDRfMS5qcGc.jpg'); /* Change to your actual path */
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            color: rgb(11, 0, 0);
+            text-align: center;
+        }
+        .order-section {
+            background-image: url('https://img.freepik.com/premium-photo/cute-golden-retriever-puppy-lies-purple-background_14117-1173463.jpg'); /* Change to your actual path */
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            color: rgb(6, 0, 4);
+            text-align: center;
+        }
+        .about-section {
+            background-image: url('https://catcaredoctor.com/wp-content/uploads/2018/09/cropped-Purple-Paw-Print-No-Background-www.wallpapersbrowse.com_-1.jpg'); /* Change to your actual path */
+            background-size: cover;
+            background-position: center;
+            padding: 50px 20px;
+            color: rgb(5, 0, 4);
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #9e0894;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .product-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .product-card {
+            background: rgb(232, 227, 232);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(241, 238, 238, 0.1);
+            margin: 1rem;
+            width: 200px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .breed-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .breed-card {
+            background: rgb(241, 235, 235);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            width: 200px;
+            text-align: center;
+        }
+        .breed-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .order-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .order-form input, .order-form select, .order-form button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #0b0000;
+            border-radius: 5px;
+        }
+        .footer-container {
+            text-align: center;
+            background-color: #ed5be4;
+            color: white;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Pet Store</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#breeds">Pet Breeds</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <h2>Your Pet's Paradise</h2>
+        <p>Luxury products for the pets you love</p>
+        <a href="#shop" class="btn-primary">Explore Now</a>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="shop-section">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://i5.walmartimages.com/asr/a249a275-319d-462f-b38c-61195f610834.6042ada5376037d62ecf02f015cb0bb9.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF" alt="Dog Food">
+                <h3>Dog Food</h3>
+                <p>$25.99</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images-cdn.ubuy.co.in/63438b3213c85031937ddae2-burgeonnest-interactive-cat-toys-for.jpg" alt="Cat Toy">
+                <h3>Cat Toy</h3>
+                <p>$12.99</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/61oLAtc5Y2L.jpg" alt="Pet Bed">
+                <h3>Pet Bed</h3>
+                <p>$35.50</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="https://www.aqueon.com/-/media/project/oneweb/aqueon/us/assets/articles/other-articles/art_20leddeluxe_hero-jpg.jpg" alt="Aquarium">
+                <h3>Aquarium</h3>
+                <p>$60.00</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pet Breeds Section -->
+    <section id="breeds" class="breeds-section">
+        <h2>Popular Pet Breeds</h2>
+        <div class="breed-list">
+            <!-- Dog breeds -->
+            <div class="breed-card">
+                <img src="https://www.pdsa.org.uk/media/7651/golden-retriever-gallery-7.jpg?anchor=center&mode=crop&quality=100&height=500&bgcolor=fff&rnd=133020233890000000" alt="Golden Retriever">
+                <h3>Golden Retriever</h3>
+                <p>A friendly, intelligent breed</p>
+            </div>
+            <div class="breed-card">
+                <img src="https://hips.hearstapps.com/hmg-prod/images/labrador-puppy-royalty-free-image-1626252338.jpg?crop=0.669xw:1.00xh;0.173xw,0&resize=1200:*" alt="Labrador">
+                <h3>Labrador</h3>
+                <p>A loyal and loving family pet</p>
+            </div>
+            <div class="breed-card">
+                <img src="https://i.etsystatic.com/39635448/r/il/904d8b/4495949523/il_570xN.4495949523_50et.jpg" alt="German Shepherd">
+                <h3>German Shepherd</h3>
+                <p>A courageous and versatile breed</p>
+            </div>
+            <div class="breed-card">
+                <img src="https://images.saymedia-content.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MjAzODQxNzI2OTk2MjI3NjQ0/miniature-poodle.png" alt="Poodle">
+                <h3>Poodle</h3>
+                <p>Known for its intelligence and hypoallergenic coat</p>
+            </div>
+            <!-- Cat breeds -->
+            <div class="breed-card">
+                <img src="https://preview.redd.it/is-my-cousins-new-cat-a-persian-or-himalayan-v0-vuqq1bq2jk9c1.jpeg?auto=webp&s=f5638d2dd29934ee96f60a95e0994aad0b95eed4" alt="Persian Cat">
+                <h3>Persian</h3>
+                <p>A calm and gentle breed</p>
+            </div>
+            <div class="breed-card">
+                <img src="https://blogstudio.s3.theshoppad.net/bella-boots-organic-pet-food/02e83b91d1fa7bef520082affb0e7ada.png" alt="Maine Coon">
+                <h3>Maine Coon</h3>
+                <p>A large and friendly cat breed</p>
+            </div>
+            <div class="breed-card">
+                <img src="https://images.squarespace-cdn.com/content/v1/5aa0bf73af2096458586fb17/ea5d4245-8234-4078-824b-25c71b24bdcb/siamese.jpg" alt="Siamese Cat">
+                <h3>Siamese</h3>
+                <p>Known for its striking blue eyes and vocal nature</p>
+            </div>
+            <!-- Bird breeds -->
+            <div class="breed-card">
+                <img src="https://lafeber.com/pet-birds/wp-content/uploads/2018/06/song-canary.jpg" alt="Canary">
+                <h3>Canary</h3>
+                <p>Known for their beautiful songs and vibrant colors</p>
+            </div>
+            <div class="breed-card">
+                <img src="https://www.budgerigarclub.com/wp-content/uploads/2021/09/tawhid-khan-5f8uEucFP6w-unsplash-971x1024.jpg" alt="Budgerigar">
+                <h3>Budgerigar</h3>
+                <p>Friendly and easy to care for, great for beginners</p>
+            </div>
+            <!-- Fish breeds -->
+            <div class="breed-card">
+                <img src="https://cdn.mos.cms.futurecdn.net/RY2EpSo74hvYXyAVpTN2Gg-1200-80.jpg" alt="Betta">
+                <h3>Betta</h3>
+                <p>Known for their vibrant colors and long fins</p>
+            </div>
+            <div class="breed-card">
+                <img src="https://thefishroom.co.nz/cdn/shop/files/Guppy_600x.png?v=1706579838" alt="Guppy">
+                <h3>Guppy</h3>
+                <p>A colorful and lively freshwater fish</p>
+            </div>
+            <div class="breed-card">
+                <img src="https://m.media-amazon.com/images/I/418TrcG-7ZL.jpg" alt="Angelfish">
+                <h3>Angelfish</h3>
+                <p>Graceful and beautiful, popular in aquariums</p>
+            </div>
+        </div>
+    </section>
+    <!-- Order Section -->
+    <!-- Order Form Section -->
+    <section id="order" class="order-section">
+        <h2>Order Your Pet</h2>
+        <form action="/order" method="POST" class="order-form">
+            <label for="petType">Select Pet Type:</label>
+            <select id="petType" name="petType" required>
+                <option value="" >Select a pet type</option>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="bird">Bird</option>
+                <option value="fish">Fish</option>
+            </select>
+
+            <label for="petBreed">Select Breed:</label>
+            <select id="petBreed" name="petBreed"required>
+                <option value="" >Select a breed</option>
+                <option value="golden-retriever">Golden Retriever</option>
+                <option value="labrador">Labrador</option>
+                <option value="persian">Persian Cat</option>
+                <option value="betta">Betta</option>
+                <!-- Add more breeds as needed -->
+            </select>
+
+            <label for="cost">Estimated Cost:</label>
+            <input type="number" id="cost" name="cost" placeholder="Enter estimated cost" required>
+
+            <label for="customerName">Your Name:</label>
+            <input type="text" id="customerName" name="customerName" placeholder="Enter your name" required>
+
+            <label for="customerEmail">Your Email:</label>
+            <input type="email" id="customerEmail" name="customerEmail"placeholder="Enter your email" required>
+            <label for="date">Order Date and Time:</label>
+            <input type="datetime-local" id="orderDate" name="orderDate" required>
+
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2>About Us</h2>
+            <p>We are passionate about pets and providing the best products and services to make your pets happy and healthy. Our store offers a wide range of pet supplies and accessories for all kinds of pets.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Pet Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

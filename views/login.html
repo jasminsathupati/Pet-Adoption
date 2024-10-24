@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <style>
+        /* New styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190620/ourmid/pngtree-pet-shop-adoption-cartoon-hand-painted-white-banner-image_170656.jpg'); /* Add your background image path here */
+            background-size: cover;
+            background-position: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00796b;
+        }
+
+        .form-container {
+            background: linear-gradient(135deg, #ffeb3b, #ff5722);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            width: 350px;
+        }
+
+        form {
+            display: none;
+        }
+
+        form.active {
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 8px;
+            border: 2px solid #00796b;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00796b;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+        .toggle-btn {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .toggle-btn a {
+            color: #004d40;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .toggle-btn a:hover {
+            color: #00796b;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <header>
+            <h1 id="form-title">Login to Pawfinds</h1>
+        </header>
+        <!-- Login Form -->
+        <form id="login-form" class="active" action="/signin" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Sign Up Form -->
+        <form id="signup-form" action="/signup" method="POST">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" name="username" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" name="password" required><br>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm_password" required><br>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <!-- Toggle between forms -->
+        <div class="toggle-btn">
+            <p id="toggle-text">Don't have an account? <a id="toggle-link">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Elements
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const formTitle = document.getElementById('form-title');
+        const toggleText = document.getElementById('toggle-text');
+        const toggleLink = document.getElementById('toggle-link');
+
+        // Toggle between login and signup forms
+        toggleLink.addEventListener('click', function () {
+            if (loginForm.classList.contains('active')) {
+                loginForm.classList.remove('active');
+                signupForm.classList.add('active');
+                formTitle.innerText = 'Create Your Account';
+                toggleText.innerHTML = 'Already have an account? <a id="toggle-link">Login</a>';
+            } else {
+                signupForm.classList.remove('active');
+                loginForm.classList.add('active');
+                formTitle.innerText = 'Login to Pawfinds';
+                toggleText.innerHTML = 'Don\'t have an account? <a id="toggle-link">Sign Up</a>';
+            }
+        });
+    </script>
+</body>
+</html>
